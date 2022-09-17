@@ -1,0 +1,11 @@
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\obj\Debug\HelloTriangleS.csprojResolveAssemblyReference.cache
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\obj\Debug\Proyecto1_01.exe
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\obj\Debug\Proyecto1_01.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\Proyecto1_01.exe.config
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\Proyecto1_01.exe
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\Proyecto1_01.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\Newtonsoft.Json.dll
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\OpenTK.dll
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\Newtonsoft.Json.xml
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\OpenTK.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea#1\Tarea # 3\bin\Debug\OpenTK.xml
