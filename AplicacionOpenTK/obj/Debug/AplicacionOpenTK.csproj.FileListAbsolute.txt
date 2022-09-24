@@ -1,0 +1,14 @@
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\AplicacionOpenTK.exe.config
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\AplicacionOpenTK.exe
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\AplicacionOpenTK.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\OpenTK.dll
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\OpenTK.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\OpenTK.xml
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csproj.AssemblyReference.cache
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csproj.SuggestedBindingRedirects.cache
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csproj.CoreCompileInputs.cache
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csproj.CopyComplete
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.exe
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.pdb
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\Newtonsoft.Json.dll
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 4\AplicacionOpenTK\AplicacionOpenTK\bin\Debug\Newtonsoft.Json.xml
