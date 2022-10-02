@@ -9,44 +9,37 @@ using System.Threading.Tasks;
 
 namespace AplicacionOpenTK.Utiles
 {
+    //SE PUEDE HACER UNA INTERFAZ O CLASE ABSTRACTA ¿CUAL ES MEJOR?, ¿POR QUE?
     public class Serializador<T>
     {
-        //Atributo tipo string que lleva el directorio del archivo .json
-        private string _path;
-
-        //Construnctor por que permite nombrar el .json
-        public Serializador(string name)
-        {
-            _path = name + ".json";
-        }
+        //PUEDE EXISTIR UNA CLASE SIN ATRIBUTOS ???
+        //QUIERO QUE GUARDE LOS OBJETOS EN UNA CARPETA HOMONIMA
 
         //Metodo para serializar un objeto entrante tipo triangulo a archivo .json
-        public void Serializar(T objecto)
+        public void Serializar(string dir, T objecto)
         {
-            //genera el string json
+            //genera el string json (formato identado)
             string json = JsonConvert.SerializeObject(objecto, Formatting.Indented);
 
             //guarda el string json como archivo .json
-            File.WriteAllText(_path, json);
+            File.WriteAllText(dir, json);
         }
 
         //Funcion que retorna un triangulo con los valores obtenidos de un .json
-        public T Deserealizar()
+        public T Deserealizar(string dir)
         {
             string json;
 
             //se obtiene en un string los valores guardados en el .json
-            using (var reader = new StreamReader(_path))
+            using (var reader = new StreamReader(dir))
             {
                 json = reader.ReadToEnd();
             }
 
             //agrega los valores del string json a un objeto
             T objeto = JsonConvert.DeserializeObject<T>(json);
-            //dynamic obj = JsonConvert.DeserializeObject<dynamic>(json);
-            //T objeto = JsonConvert.DeserializeObject<T>(JsonConvert.SerializeObject(obj.partes));
 
-            //retorna ese triangulo
+            //retorna el objeto
             return objeto;
         }
     }

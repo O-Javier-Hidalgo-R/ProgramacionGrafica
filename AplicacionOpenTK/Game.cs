@@ -1,31 +1,36 @@
 ﻿using AplicacionOpenTK.Modelos;
 using AplicacionOpenTK.Utiles;
+using Newtonsoft.Json;
 using OpenTK;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System;
+using System.Collections.Generic;
 
 namespace AplicacionOpenTK
 {
-    public class Escenario : GameWindow
+    public class Game : GameWindow
     {
-        public Objeto objeto;
+        Escenario escenario;
+
+        Objeto casa;
+        Objeto casa2;
+
+        Serializador<Escenario> serializador = new Serializador<Escenario>();
         //-----------------------------------------------------------------------------------------------------------------
-        public Escenario(int width, int height, string title) : base(width, height, GraphicsMode.Default, title)
+        public Game(int width, int height, string title) : base(width, height, GraphicsMode.Default, title)
         {
-            Serializador<Objeto> serializador = new Serializador<Objeto>("objeto-de-prueba-numero-1");
-            bool s = true;
-            if (s)
-            {
-                Punto<float> punto = new Punto<float>(0f, 0f, 0f);
-                objeto = new Objeto(punto, 20f, 20f, 20f);
-                serializador.Serializar(objeto);
-            }
-            else
-            {
-                objeto = serializador.Deserealizar();
-            }
-           
+            escenario = serializador.Deserealizar("../../../AplicacionOpenTK/json/Escenario.json");
+
+            /*
+            Dictionary<string, Objeto> objetos = new Dictionary<string, Objeto>();
+            objetos.Add("casa1", casa);
+
+            escenario = new Escenario(objetos, new Punto<float>(0, 0, 0));
+
+            Serializador<Escenario> serializador2 = new Serializador<Escenario>();
+            serializador2.Serializar("../../../AplicacionOpenTK/json/Escenario.json", escenario);
+            */
         }
         //-----------------------------------------------------------------------------------------------------------------
         protected override void OnUpdateFrame(FrameEventArgs e)
@@ -36,7 +41,11 @@ namespace AplicacionOpenTK
         protected override void OnLoad(EventArgs e)
         {
             GL.ClearColor(Color4.Black);
-            //cubo = new Cubo(new Punto(), 10, 10 ,10);
+
+            int orthoSize = 50;
+            GL.Ortho(-orthoSize, orthoSize, -orthoSize, orthoSize, -orthoSize, orthoSize);
+            GL.Rotate(30, 1, -1, 0);
+
             base.OnLoad(e);
         }
         //-----------------------------------------------------------------------------------------------------------------
@@ -52,11 +61,11 @@ namespace AplicacionOpenTK
             //GL.DepthMask(true);
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Enable(EnableCap.DepthTest);
-            GL.LoadIdentity();
-            //-----------------------
-            GL.Rotate(45, -1, -1, 0);
-            GL.Translate(-5, -10, 5);
-            objeto.Dibujar();
+            //GL.LoadIdentity();
+            //----------------------
+            //GL.Rotate(0.5, 0, 1, 0);
+            //GL.Translate(-5, -10, 5);
+            escenario.dibujar();
             //-----------------------
             Context.SwapBuffers();
             base.OnRenderFrame(e);
@@ -64,14 +73,14 @@ namespace AplicacionOpenTK
         //-----------------------------------------------------------------------------------------------------------------
         protected override void OnResize(EventArgs e)
         {
-            float d = 30;
+            //float d = 30;
             GL.Viewport(0, 0, Width, Height);
-            GL.MatrixMode(MatrixMode.Projection);
-            GL.LoadIdentity();
-            GL.Ortho(-d, d, -d, d, -d, d);
+            //GL.MatrixMode(MatrixMode.Projection);
+            //GL.LoadIdentity();
+            //GL.Ortho(-d, d, -d, d, -d, d);
             //GL.Frustum(-80, 80, -80, 80, 4, 100);
-            GL.MatrixMode(MatrixMode.Modelview);
-            GL.LoadIdentity();
+            //GL.MatrixMode(MatrixMode.Modelview);
+            //GL.LoadIdentity();
             base.OnResize(e);
         }
     }

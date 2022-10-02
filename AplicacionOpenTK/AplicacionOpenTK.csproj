@@ -51,7 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Escenario.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Modelos\Escenario.cs" />
     <Compile Include="Modelos\Objeto.cs" />
     <Compile Include="Modelos\Parte.cs" />
     <Compile Include="Program.cs" />
@@ -64,7 +65,9 @@
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="json\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
