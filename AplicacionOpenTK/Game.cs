@@ -16,7 +16,7 @@ namespace AplicacionOpenTK
     /// </summary>
     public class Game : GameWindow
     {
-        Escenario Escenario;
+        Escenario Escenario1;
         Escenario Escenario2;
 
 
@@ -27,7 +27,7 @@ namespace AplicacionOpenTK
         /// <param name="height">Altura de la resolucion.</param>
         public Game(int width, int height) : base(width, height)
         {
-            Escenario = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario.json");
+            Escenario1 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario.json");
 
             Escenario2 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario2.json");
         }
@@ -60,7 +60,7 @@ namespace AplicacionOpenTK
             GL.Enable(EnableCap.DepthTest);
 
             //Escenario.dibujar();
-            Escenario2.dibujar();
+            Escenario1.dibujar();
 
             GL.Rotate(0.5f, 1, 0, 0);
 
