@@ -3,41 +3,51 @@
 namespace AplicacionOpenTK.Modelos
 {
     [DataContract]
-    public class Punto<T>
+    public class Punto
     {
         [DataMember]
-        public T x;
+        private float x;
         [DataMember]
-        public T y;
+        private float y;
         [DataMember]
-        public T z;
+        private float z;
 
         public Punto()
         {
 
         }
 
-        public Punto(T x, T y, T z)
+        public Punto(float x, float y, float z)
         {
             this.X = x;
             this.Y = y;
             this.Z = z;
         }
 
-        public Punto(Punto<T> punto)
+        public Punto(Punto punto)
         {
             this.X = punto.X;
             this.Y = punto.Y;
             this.Z = punto.Z;
         }
 
-        public T X { get => x; set => x = value; }
-        public T Y { get => y; set => y = value; }
-        public T Z { get => z; set => z = value; }
+        public float X { get => x; set => x = value; }
+        public float Y { get => y; set => y = value; }
+        public float Z { get => z; set => z = value; }
+
+        public Punto suma(Punto a, Punto b)
+        {
+            float p = a.X + b.X;
+            float q = a.Y + b.Y;
+            float r = a.Z + b.Z;
+
+            return new Punto(p, q, r);
+        }
 
         public override string ToString()
         {
             return "(" + x.ToString() + ", " + y.ToString() + ", " + z.ToString() + ")";
         }
+
     }
 }

@@ -12,22 +12,22 @@ namespace AplicacionOpenTK.Modelos
         [DataMember]
         private Dictionary<string, Parte> partes;
         [DataMember]
-        private Punto<float> centro;
+        private Punto centro;
 
         public Dictionary<string, Parte> Partes { get => partes; set => partes = value; }
-        public Punto<float> Centro { get => centro; set => centro = value; }
+        public Punto Centro { get => centro; set => centro = value; }
 
         public Objeto()
         {
         }
 
-        public Objeto(Dictionary<string, Parte> partes, Punto<float> centro)
+        public Objeto(Dictionary<string, Parte> partes, Punto centro)
         {
             this.Partes = partes;
             this.Centro = centro;
             foreach (var parte in partes)
             {
-                parte.Value.centro = centro;
+                parte.Value.Centro = centro;
             }
         }
 

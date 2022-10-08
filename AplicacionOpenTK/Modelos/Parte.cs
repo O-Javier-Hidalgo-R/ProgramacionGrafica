@@ -11,27 +11,32 @@ namespace AplicacionOpenTK
     public class Parte
     {
         [DataMember]
-        public Dictionary<string, Punto<float>> puntos;
+        private Dictionary<string, Punto> puntos;
 
         [DataMember]
-        public Color4 color;
+        private Color4 color;
 
         [DataMember]
-        public Punto<float> centro;
+        private Punto centro;
 
         public Parte()
         {
             
         }
 
-        public Parte(Dictionary<string, Punto<float>> puntos, Color4 color, Punto<float> centro)
+        public Parte(Dictionary<string, Punto> puntos, Color4 color, Punto centro)
         {
-            this.puntos = puntos;
-            this.color = color;
-            this.centro = centro;
+            this.Puntos1 = puntos;
+            this.Color = color;
+            this.Centro = centro;
         }
 
-        //QUE CARAJOS ES EL TEXTURE TYPE
+        public Dictionary<string, Punto> Puntos { get => Puntos1; set => Puntos1 = value; }
+        public Dictionary<string, Punto> Puntos1 { get => puntos; set => puntos = value; }
+        public Color4 Color { get => color; set => color = value; }
+        public Punto Centro { get => centro; set => centro = value; }
+
+        //QUE ES EL TEXTURE TYPE
         public void Dibujar()
         {
             PrimitiveType primitiveType = PrimitiveType.LineLoop;
@@ -40,10 +45,10 @@ namespace AplicacionOpenTK
         private void Bozquejo(PrimitiveType primitiveType)
         {
             GL.Begin(primitiveType);
-            GL.Color3(color.R, color.G, color.B);
-            foreach (Punto<float> p in puntos.Values)
+            GL.Color3(Color.R, Color.G, Color.B);
+            foreach (Punto p in Puntos.Values)
             {
-                GL.Vertex3(centro.X + p.X, centro.Y + p.Y, centro.Z + p.Z);
+                GL.Vertex3(Centro.X + p.X, Centro.Y + p.Y, Centro.Z + p.Z);
             }
             GL.End();
         }

@@ -12,10 +12,9 @@ namespace AplicacionOpenTK.Modelos
         [DataMember]
         private Dictionary<string, Objeto> objetos;
         [DataMember]
-        private Punto<float> centro;
+        private Punto centro;
 
-        //PUEDE QUE ESTE MAL Y QUE NECESITE SOBRECARGA DE OPERADOR "+"
-        public Escenario(Dictionary<string, Objeto> objetos, Punto<float> centro)
+        public Escenario(Dictionary<string, Objeto> objetos, Punto centro)
         {
             this.objetos = objetos;
             this.centro = centro;
@@ -27,7 +26,7 @@ namespace AplicacionOpenTK.Modelos
 
         public Dictionary<string, Objeto> Objetos { get => objetos; set => objetos = value; }
 
-        public Punto<float> Centro { get => centro; set => centro = value; }
+        public Punto Centro { get => centro; set => centro = value; }
 
         public void dibujar()
         {

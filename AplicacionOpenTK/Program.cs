@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var escenario = new Game(1280, 720, "escenario");
+            var escenario = new Game(1280, 720);
             escenario.Run(80);
         }
     }
