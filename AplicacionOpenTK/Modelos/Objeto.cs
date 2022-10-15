@@ -38,5 +38,32 @@ namespace AplicacionOpenTK.Modelos
                 parte.Value.Dibujar();
             }
         }
+
+        //Transformacion de traslacion 
+        public void trasladar(float enX, float enY, float enZ) {
+
+            foreach (var parte in partes)
+            {
+                parte.Value.trasladar(enX, enY, enZ);
+            }
+        }
+
+        //Transformacion de rotacion
+        public void rotar(float angX, float angY, float angZ)
+        {
+            foreach (var parte in partes)
+            {
+                parte.Value.rotar(angX, angY, angZ);
+            }
+        }
+
+        //Transformacion de escalacion
+        public void escalar(float enX, float enY, float enZ)
+        {
+            foreach (var parte in partes)
+            {
+                parte.Value.escalar(enX, enY, enZ);
+            }
+        }
     }
 }

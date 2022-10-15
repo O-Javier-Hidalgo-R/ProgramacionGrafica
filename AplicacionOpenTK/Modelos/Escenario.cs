@@ -18,10 +18,6 @@ namespace AplicacionOpenTK.Modelos
         {
             this.objetos = objetos;
             this.centro = centro;
-            foreach (var objeto in objetos)
-            {
-                objeto.Value.Centro = centro;
-            }
         }
 
         public Dictionary<string, Objeto> Objetos { get => objetos; set => objetos = value; }
@@ -33,6 +29,33 @@ namespace AplicacionOpenTK.Modelos
             foreach (var objeto in objetos)
             {
                 objeto.Value.dibujar();
+            }
+        }
+
+        //Transformacion de traslacion 
+        public void trasladar(float enX, float enY, float enZ)
+        {
+            foreach (var objeto in objetos)
+            {
+                objeto.Value.trasladar(enX, enY, enZ);
+            }
+        }
+
+        //Transformacion de rotacion
+        public void rotar(float angX, float angY, float angZ)
+        {
+            foreach (var objeto in objetos)
+            {
+                objeto.Value.rotar(angX, angY, angZ);
+            }
+        }
+
+        //Transformacion de escalacion
+        public void escalar(float enX, float enY, float enZ)
+        {
+            foreach (var objeto in objetos)
+            {
+                objeto.Value.escalar(enX, enY, enZ);
             }
         }
     }

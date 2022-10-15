@@ -19,7 +19,6 @@ namespace AplicacionOpenTK
         Escenario Escenario1;
         Escenario Escenario2;
 
-
         /// <summary>
         /// Constructor de la clase predeterminado, con la resolucion como parametro de entrada.
         /// </summary>
@@ -28,7 +27,6 @@ namespace AplicacionOpenTK
         public Game(int width, int height) : base(width, height)
         {
             Escenario1 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario.json");
-
             Escenario2 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario2.json");
         }
 
@@ -59,10 +57,25 @@ namespace AplicacionOpenTK
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Enable(EnableCap.DepthTest);
 
-            //Escenario.dibujar();
+            //dibujos
+
             Escenario1.dibujar();
 
-            GL.Rotate(0.5f, 1, 0, 0);
+            //Transformaciones
+
+                //sobre objeto
+                    
+                    Escenario1.Objetos.TryGetValue("Casa", out var objeto);
+                    
+                    //objeto.trasladar(0.001f, 0, 0);           //neutro (0,0,0)
+                    objeto.rotar(1,0,0);                      //neutro (0,0,0)
+                    //objeto.escalar(1.001f,1.001f,1.001f);     //neutro (1,1,1) & crecimientoRegular (1+k, 1+k, 1+k)          
+
+                //sobre Escenario
+
+                    //Escenario1.trasladar(0.001f, 0, 0);       //neutro (0,0,0)
+                    //Escenario1.rotar(1,0,0);                  //neutro (0,0,0)
+                    //Escenario1.escalar(1.001f,1.001f,1.001f); //neutro (1,1,1) & crecimientoRegular (1+k, 1+k, 1+k) 
 
             SwapBuffers();
             base.OnRenderFrame(e);

@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using OpenTK;
+using System.Runtime.Serialization;
 
 namespace AplicacionOpenTK.Modelos
 {
@@ -47,6 +48,63 @@ namespace AplicacionOpenTK.Modelos
         public override string ToString()
         {
             return "(" + x.ToString() + ", " + y.ToString() + ", " + z.ToString() + ")";
+        }
+
+        /*
+        public static Punto operator *(Matrix4 m, Punto p)
+        {
+            return new Punto(
+                m.M11*p.X + m.M12*p.Y + m.M13*p.Z + m.M14,
+                m.M21*p.X + m.M22*p.Y + m.M23*p.Z + m.M24,
+                m.M31*p.X + m.M32*p.Y + m.M33*p.Z + m.M34
+                );
+            
+            Vector4 vectorP = new Vector4(p.X, p.Y, p.Z, 1);
+            Vector4 a = m * vectorP;
+            return new Punto(a.X, a.Y, a.Z);
+        }
+        */
+
+        public void trasladar(float enX, float enY, float enZ)
+        {
+            Matrix4 matrixTraslacion = Matrix4.CreateTranslation(enX, enY, enZ);
+            Vector4 PuntoTrasladado = new Vector4(X, Y, Z, 1);
+            PuntoTrasladado = PuntoTrasladado * matrixTraslacion;
+
+            X = PuntoTrasladado.X; 
+            Y = PuntoTrasladado.Y; 
+            Z = PuntoTrasladado.Z;
+        }
+
+        public void rotar(float angX, float angY, float angZ)
+        {
+            angX = MathHelper.DegreesToRadians(angX);
+            angY = MathHelper.DegreesToRadians(angY);
+            angZ = MathHelper.DegreesToRadians(angZ);
+
+            Matrix4 matrixRotacion = Matrix4.CreateRotationX(angX) * Matrix4.CreateRotationY(angY) * Matrix4.CreateRotationZ(angZ);
+
+            Vector4 PuntoRotado = new Vector4(X, Y, Z, 1);
+            PuntoRotado = PuntoRotado * matrixRotacion;
+
+            X = PuntoRotado.X;
+            Y = PuntoRotado.Y;
+            Z = PuntoRotado.Z;
+        }
+
+        public void escalar(float enX, float enY, float enZ)
+        {
+            Matrix4 matrixEscalacion = Matrix4.CreateScale(enX, enY, enZ);
+            Vector4 PuntoEscalado = new Vector4(X, Y, Z, 1);
+            PuntoEscalado = PuntoEscalado * matrixEscalacion;
+
+            X = PuntoEscalado.X;
+            Y = PuntoEscalado.Y;
+            Z = PuntoEscalado.Z;
+        }
+        public static Punto operator +(Punto a, Punto b)
+        {
+            return new Punto(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
         }
 
     }
