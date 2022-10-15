@@ -1,15 +1,14 @@
-﻿using AplicacionOpenTK.Modelos;
-using OpenTK;
+﻿using AplicacionOpenTK.Interfaces;
+using AplicacionOpenTK.Modelos;
 using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace AplicacionOpenTK
 {
     [DataContract]
-    public class Parte
+    public class Parte: ITransformable
     {
         [DataMember]
         private Dictionary<string, Punto> puntos;

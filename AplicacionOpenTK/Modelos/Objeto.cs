@@ -1,13 +1,11 @@
-﻿using OpenTK.Graphics;
-using System.CodeDom;
-using System.Collections;
+﻿using AplicacionOpenTK.Interfaces;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace AplicacionOpenTK.Modelos
 {
     [DataContract]
-    public class Objeto
+    public class Objeto:ITransformable
     {
         [DataMember]
         private Dictionary<string, Parte> partes;

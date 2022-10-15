@@ -1,13 +1,10 @@
-﻿using System;
+﻿using AplicacionOpenTK.Interfaces;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AplicacionOpenTK.Modelos
 {
-    public class Escenario
+    public class Escenario: ITransformable
     {
         [DataMember]
         private Dictionary<string, Objeto> objetos;

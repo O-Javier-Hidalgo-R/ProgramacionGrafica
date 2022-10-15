@@ -58,6 +58,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Modelos\Punto.cs" />
+    <Compile Include="Interfaces\ITransformable.cs" />
     <Compile Include="Utiles\Serializador.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +66,8 @@
     <None Include="Figuras3D\Auto.obj" />
     <None Include="Figuras3D\Casa.obj" />
     <None Include="Figuras3D\Cubo.obj" />
+    <None Include="Figuras3D\Escenario.json" />
+    <None Include="Figuras3D\escenario2.json" />
     <None Include="Figuras3D\Mesa.obj" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
