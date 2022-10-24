@@ -1,4 +1,5 @@
-﻿using AplicacionOpenTK.Modelos;
+﻿using AplicacionOpenTK.Interfaz_Grafica;
+using AplicacionOpenTK.Modelos;
 using AplicacionOpenTK.Utiles;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
@@ -11,8 +12,10 @@ namespace AplicacionOpenTK
     /// </summary>
     public class Game : GameWindow
     {
-        Escenario Escenario1;
+        private Escenario Escenario1;
         Escenario Escenario2;
+        private Objeto objeto;
+        FGame form;
 
         /// <summary>
         /// Constructor de la clase predeterminado, con la resolucion como parametro de entrada.
@@ -23,6 +26,10 @@ namespace AplicacionOpenTK
         {
             Escenario1 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario.json");
             Escenario2 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario2.json");
+
+            form = new FGame();
+            form.obtenerEscenario(Escenario1);
+            form.Show();
         }
 
         /// <summary>
@@ -42,35 +49,21 @@ namespace AplicacionOpenTK
             base.OnLoad(e);
         }
 
+        //
+
         /// <summary>
         /// Llamada donde los frames son renderizados.
         /// Contiene información necesaria para la representación de cuadros.
         /// </summary>
-        /// <param name="e">parametro para eventos.</param>
+        /// <param name="e">parametro para eventos.</param
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Enable(EnableCap.DepthTest);
 
-            //dibujos
+            Escenario1.dibujar(2);
 
-            Escenario1.dibujar();
-
-            //Transformaciones
-
-                //sobre objeto
-                    
-                    Escenario1.Objetos.TryGetValue("Casa", out var objeto);
-                    
-                    //objeto.trasladar(0.001f, 0, 0);           //neutro (0,0,0)
-                    objeto.rotar(1,0,0);                      //neutro (0,0,0)
-                    //objeto.escalar(1.001f,1.001f,1.001f);     //neutro (1,1,1) & crecimientoRegular (1+k, 1+k, 1+k)          
-
-                //sobre Escenario
-
-                    //Escenario1.trasladar(0.001f, 0, 0);       //neutro (0,0,0)
-                    //Escenario1.rotar(1,0,0);                  //neutro (0,0,0)
-                    //Escenario1.escalar(1.001f,1.001f,1.001f); //neutro (1,1,1) & crecimientoRegular (1+k, 1+k, 1+k) 
+            form.Escenario = Escenario1;
 
             SwapBuffers();
             base.OnRenderFrame(e);
@@ -93,7 +86,7 @@ namespace AplicacionOpenTK
         /// </summary>
         /// <param name="e">Parametro de evento.</param>
         protected override void OnUnload(EventArgs e)
-        {
+        {   
             base.OnUnload(e);
         }
 

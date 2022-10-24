@@ -11,28 +11,50 @@ namespace AplicacionOpenTK.Modelos
         [DataMember]
         private Punto centro;
 
-        public Escenario(Dictionary<string, Objeto> objetos, Punto centro)
+        public Dictionary<string, Objeto> Objetos
         {
-            this.objetos = objetos;
-            this.centro = centro;
+            get
+            {
+                return objetos;
+            }
+
+            set
+            {
+                objetos = value;
+            }
         }
 
-        public Dictionary<string, Objeto> Objetos { get => objetos; set => objetos = value; }
-
-        public Punto Centro { get => centro; set => centro = value; }
-
-        public void dibujar()
+        public Punto Centro
         {
-            foreach (var objeto in objetos)
+            get
             {
-                objeto.Value.dibujar();
+                return centro;
+            }
+
+            set
+            {
+                centro = value;
+            }
+        }
+
+        public Escenario(Dictionary<string, Objeto> objetos, Punto centro)
+        {
+            this.Objetos = objetos;
+            this.Centro = centro;
+        }
+
+        public void dibujar(int tipoDeDibujo)
+        {
+            foreach (var objeto in Objetos)
+            {
+                objeto.Value.dibujar(tipoDeDibujo);
             }
         }
 
         //Transformacion de traslacion 
         public void trasladar(float enX, float enY, float enZ)
         {
-            foreach (var objeto in objetos)
+            foreach (var objeto in Objetos)
             {
                 objeto.Value.trasladar(enX, enY, enZ);
             }
@@ -41,7 +63,7 @@ namespace AplicacionOpenTK.Modelos
         //Transformacion de rotacion
         public void rotar(float angX, float angY, float angZ)
         {
-            foreach (var objeto in objetos)
+            foreach (var objeto in Objetos)
             {
                 objeto.Value.rotar(angX, angY, angZ);
             }
@@ -50,7 +72,7 @@ namespace AplicacionOpenTK.Modelos
         //Transformacion de escalacion
         public void escalar(float enX, float enY, float enZ)
         {
-            foreach (var objeto in objetos)
+            foreach (var objeto in Objetos)
             {
                 objeto.Value.escalar(enX, enY, enZ);
             }

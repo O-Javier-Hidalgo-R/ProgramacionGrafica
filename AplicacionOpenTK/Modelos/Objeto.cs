@@ -12,35 +12,62 @@ namespace AplicacionOpenTK.Modelos
         [DataMember]
         private Punto centro;
 
-        public Dictionary<string, Parte> Partes { get => partes; set => partes = value; }
-        public Punto Centro { get => centro; set => centro = value; }
+        public Dictionary<string, Parte> Partes
+        {
+            get
+            {
+                return partes;
+            }
+
+            set
+            {
+                partes = value;
+            }
+        }
+
+        public Punto Centro
+        {
+            get
+            {
+                return centro;
+            }
+
+            set
+            {
+                centro = value;
+                foreach (var face in Partes) face.Value.Centro = Centro;
+            }
+        }
 
         public Objeto()
         {
+        }
+
+        public void SetCenter(Punto newCenter)
+        {
+            Centro = newCenter;
+            foreach (var face in Partes)
+                face.Value.Centro = Centro;
         }
 
         public Objeto(Dictionary<string, Parte> partes, Punto centro)
         {
             this.Partes = partes;
             this.Centro = centro;
-            foreach (var parte in partes)
-            {
-                parte.Value.Centro = centro;
-            }
         }
 
-        public void dibujar()
+        public void dibujar(int tipoDeDibujo)
         {
-            foreach (var parte in partes)
+            foreach (var parte in Partes)
             {
-                parte.Value.Dibujar();
+                parte.Value.Dibujar(tipoDeDibujo);
             }
         }
 
         //Transformacion de traslacion 
         public void trasladar(float enX, float enY, float enZ) {
 
-            foreach (var parte in partes)
+            foreach (var parte in Partes)
             {
                 parte.Value.trasladar(enX, enY, enZ);
             }
@@ -49,7 +76,7 @@ namespace AplicacionOpenTK.Modelos
         //Transformacion de rotacion
         public void rotar(float angX, float angY, float angZ)
         {
-            foreach (var parte in partes)
+            foreach (var parte in Partes)
             {
                 parte.Value.rotar(angX, angY, angZ);
             }
@@ -58,7 +85,7 @@ namespace AplicacionOpenTK.Modelos
         //Transformacion de escalacion
         public void escalar(float enX, float enY, float enZ)
         {
-            foreach (var parte in partes)
+            foreach (var parte in Partes)
             {
                 parte.Value.escalar(enX, enY, enZ);
             }

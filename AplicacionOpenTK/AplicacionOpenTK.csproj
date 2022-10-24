@@ -43,6 +43,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Interfaz Grafica\FGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz Grafica\FGame.Designer.cs">
+      <DependentUpon>FGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Escenario.cs" />
     <Compile Include="Modelos\Objeto.cs" />
     <Compile Include="Modelos\Parte.cs" />
@@ -72,7 +79,11 @@
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Interfaz Grafica\FGame.resx">
+      <DependentUpon>FGame.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,11 +1,14 @@
-﻿namespace AplicacionOpenTK
+﻿using System;
+using AplicacionOpenTK.Interfaz_Grafica;
+
+namespace AplicacionOpenTK
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var escenario = new Game(1280, 720);
-            escenario.Run(80);
+            var game = new Game(1280, 720);
+            game.Run(80);
         }
     }
 }
