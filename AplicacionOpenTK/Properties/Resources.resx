@@ -117,61 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>104, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAlCAYAAAAEGWqvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAK8SURBVFhH1Zi9
-        jw1RGMbnXgpfBUJWR9Chwx/go6FWiEQnUdyERIlORKPw0UhUhKCQUKxCFASFxFdHvdhEhKDxkd3r9yYz
-        m5ln37kz59y59s6T/PbunPO+zznv3LlnzkzS7/dHBlrW7XbPdDqdb/CI4xVeXAhoP14v4Dv/99ygJkDb
-        GeQd9DNoO+TF1gEt4WRczfvBlBs8DGgRnMT8jwxmnT0vpwq0kfxX6gezbkIs6UBPZZA5YgpAR8j9oV4Z
-        blIM6ACGdq27AxkhBaAJcu6ph+Imh4BWcm3e8MyVugUgOxlfNN/DNagL2oPJBzUto6oAZCfjmpdbhmtU
-        BVrKQBcxmFXDQQwqAO0j5pPmVOGaDQJtJfGtGtXBKwDZybhAf9DJyCiYDQJ14BhJv9SkLuQXCkA7aC/c
-        K0IpTLIMtJ7gx5ocSlYA6oLdK/5qTCjuhPMgWxG+amIMePVgLf9Pal8s7qQNtIpr87aXFAt+N/n8qO3D
-        UDb5XXROafA4ohO3DdN5OqJWhIUgP/ktNLzWgHEnm/xxDqKXx4UkSe+obmcbSPjzUxvbhH0Dl7yOtmDX
-        v20RTnDQzt+ArEJvNGDcmSsgLcLuA+fomNHAcaVQQK6Q3XS2706cB63m27jjJcWC3y0+p7V9GNzJ50Gj
-        2I0+0L5Y3EkraAPBTzQ5FCsg9bPngVO0jf55ICMd1J7IfqtJXcjXJ7KdtL/XuBAKk6wD2kZi+56J86SD
-        XsagybcS9tI2+AfumtUF7cWk6fdC173cMlyjENAajO6qsUdVARno/7yZy4MOY1j6EtaoW4CB1pFzXz0U
-        NzkWtAnT5zpIRkgBBrKN5lFyS7f8buIwoMVwGvN5azztQQVkoM3kv1Q/mHETmgDNW+NpO+jF1gHZRvNK
-        3g+m3eCmQMsZ9CwD2VbkoR17cSEgW26fweckSXr/AO3SPftvZFjNAAAAAElFTkSuQmCC
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Acelerar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Acelerar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAlCAYAAAAEGWqvAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKPSURBVFhH1Zm7
-        ihRBGIWnRwOvgZdgRUFRH8AbRj6Aq76BbCZi4A0MDEQQDIwEWUw0NBBdMZVFFkHxEhl6S8xG10AdVwRR
-        3PY7gwXdvb/d1dU1QRV8MNNT/zl1ereru6p7tNNZln2BZ3w+nOd5rwu0tWjNwbDf71/h+2qrXyx6GM1D
-        7sD0BqYrrM4+0I4W9eAdx/ZbfWOgAH8qhuIlpjutgiZoJw293xy/CMutmi4oQNXM8R3DE5BZhf+DZgVw
-        POf3HVZdKHUBHA8x3WIVWzQEED/oc8aqDcEngBhietwSqOIRwPGAvhOWRht8AzjuYbrREnK0CCA+0f+I
-        peNL2wDiY51pywBikZnvOnUrLb0mQgKMwPQWpmuWCLYP4HhD7d6qXhPBAf7xHtMDJcHwAELT7SVYVtSs
-        o2sAIdML0B8JdgvgeILOtupgLWIEcDzCdFOkAOIbWo0zX8wA4gPXxh3jeDDozRBkvTV4ETvAuJgnxKGU
-        AwhNt3rQXJVqAMcrQuxOOYD4SYhzkKUaYAT/UtNJB4CF1P8C11K+Bs6mPAvtSnEW0n3gKoMvbTikEkBr
-        kMniwMcVYMBZum0cDwa9uwx+nTV4ETPAHEYTkNzT6C+MzsNo+yVSgMfobK0O1qJrAC0D95UEE1mRuSfD
-        JfueHQK8pnZPVa+JkAADjA5aYiIggE7GNHXj35XASKujDZaQo2UALVQ67Yj7BviK0ZQlUKVFgPv0rd0k
-        88EnwCxGm61iC48AC/Tx2qb0oS6AjI5ZRXU0BHjK79utulAUYLFiIvR+IMiIdsrQ071Ce0fe06MvCjAo
-        mnGh3sSoyxuaqaIevOVY6V4REzWdsSG84LP5wNQGmntH9pmTcZnvpV2EuOS9vzUGP3pV7B6fAAAAAElF
-        TkSuQmCC
-</value>
+  <data name="Desacelerar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Desacelerar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buttonDesacelerar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACYAAAAlCAYAAAAuqZsAAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEVSURBVFhH7ZhB
-        CwFBGIZnd36BYjn5p8pBTkr5Q5KT4oAVid1IEpLiJBrvt+2WvlymtvY7zNbTTO9bs09z2NpPGWMUnrrv
-        +z2t9RjrDZiUB7iALZhRnwc4awX2gN5FXNK8DZcgdVIBgiPIZIpmB6eqwqbFCgl0led5/T9F0UzpxuYs
-        lMCVxGIWSuBFYhsWSuBOYiELJXAksRkLJbCRKraQKhY6MUucmC1OzBYnZosTs8WJ2eLEbHFitiRiEn/f
-        ErGIhRJIxE4slMCSxJ4slEBEYm8WSiAmsSsLJSDzc6G1HpBYhxcCaNJEsYLNmhVFEsOpnM1gSwgauMIh
-        1gPI5q7EJJud5gHO+52/flLO6EZYO3CpGWPUF0bRgo+qXcDkAAAAAElFTkSuQmCC
-</value>
+  <data name="Pausa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Pausa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>219, 17</value>
-  </metadata>
+  <data name="Play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Recursos\Stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -43,6 +43,11 @@ namespace AplicacionOpenTK.Modelos
             this.Centro = centro;
         }
 
+        public Escenario()
+        {
+
+        }
+
         public void dibujar(int tipoDeDibujo)
         {
             foreach (var objeto in Objetos)

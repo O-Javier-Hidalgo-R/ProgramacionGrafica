@@ -5,9 +5,14 @@ namespace AplicacionOpenTK
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
-            var game = new Game(1280, 720);
+            FGame form = new FGame();
+            form.Show();
+
+            Game game = new Game(1280, 720);
+            form.Game = game;
             game.Run(80);
         }
     }

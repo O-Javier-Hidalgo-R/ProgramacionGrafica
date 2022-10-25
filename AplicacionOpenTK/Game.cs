@@ -2,8 +2,10 @@
 using AplicacionOpenTK.Modelos;
 using AplicacionOpenTK.Utiles;
 using OpenTK;
+using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using System;
+using System.Collections.Generic;
 
 namespace AplicacionOpenTK
 {
@@ -12,10 +14,7 @@ namespace AplicacionOpenTK
     /// </summary>
     public class Game : GameWindow
     {
-        private Escenario Escenario1;
-        Escenario Escenario2;
-        private Objeto objeto;
-        FGame form;
+        Dictionary<string, Escenario> escenarios;
 
         /// <summary>
         /// Constructor de la clase predeterminado, con la resolucion como parametro de entrada.
@@ -24,13 +23,25 @@ namespace AplicacionOpenTK
         /// <param name="height">Altura de la resolucion.</param>
         public Game(int width, int height) : base(width, height)
         {
-            Escenario1 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario.json");
-            Escenario2 = new Serializador<Escenario>().CargarJson("../../../AplicacionOpenTK/Figuras3D/Escenario2.json");
 
-            form = new FGame();
-            form.obtenerEscenario(Escenario1);
-            form.Show();
         }
+
+        public Dictionary<string, Escenario> Escenarios
+        {
+            get
+            {
+                return escenarios;
+            }
+
+            set
+            {
+                escenarios = value;
+            }
+        }
+
+        public int PerX { get; set; }
+        public int PerY { get; set; }
+        public int PerZ { get; set; }
 
         /// <summary>
         /// Se llama después de que se haya establecido un contexto OpenGL, pero antes de ingresar al bucle principal
@@ -43,7 +54,7 @@ namespace AplicacionOpenTK
             GL.MatrixMode(MatrixMode.Projection);
             GL.LoadIdentity();
             GL.Ortho(-1, 1, -1, 1, -1, 1);
-            GL.Rotate(15, 1, -1, 0);
+            GL.Rotate(90, 0, 1, 0);
             GL.MatrixMode(MatrixMode.Modelview);
 
             base.OnLoad(e);
@@ -61,9 +72,20 @@ namespace AplicacionOpenTK
             GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
             GL.Enable(EnableCap.DepthTest);
 
-            Escenario1.dibujar(2);
-
-            form.Escenario = Escenario1;
+            if (Escenarios != null)
+            {
+                foreach (var escenario in Escenarios)
+                {
+                    escenario.Value.dibujar(2);
+                }
+            }
+            
+            GL.MatrixMode(MatrixMode.Projection);
+            GL.LoadIdentity();
+            GL.Rotate(PerX, 1, 0, 0);
+            GL.Rotate(PerY, 0, 1, 0);
+            GL.Rotate(PerZ, 0, 0, 1);
+            GL.MatrixMode(MatrixMode.Modelview);
 
             SwapBuffers();
             base.OnRenderFrame(e);

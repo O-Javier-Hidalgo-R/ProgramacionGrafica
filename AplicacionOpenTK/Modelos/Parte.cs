@@ -128,12 +128,25 @@ namespace AplicacionOpenTK
         //Transformacion de escalacion
         public void escalar(float enX, float enY, float enZ)
         {
+            Matrix4 matrixEscalada = Matrix4.CreateScale(enX, enY, enZ);
+            Vector4 puntoEscalado = new Vector4(centro.X, centro.Y, centro.Z, 1);
+            puntoEscalado = puntoEscalado * matrixEscalada;
+            centro = new Punto(puntoEscalado.X, puntoEscalado.Y, puntoEscalado.Z);
+
+            foreach (var punto in puntos)
+            {
+                puntoEscalado = new Vector4(punto.Value.X, punto.Value.Y, punto.Value.Z, 1);
+                puntoEscalado = puntoEscalado * matrixEscalada;
+                punto.Value.Set(new Punto(puntoEscalado.X, puntoEscalado.Y, puntoEscalado.Z));
+            }
+            /*
             Matrix3 matrixEscalada = Matrix3.CreateScale(enX, enY, enZ);
 
             foreach (var punto in Puntos)
             {
                 punto.Value.Set(punto.Value * matrixEscalada);
             }
+            */
         }
     }
 }
