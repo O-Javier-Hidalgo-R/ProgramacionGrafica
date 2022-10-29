@@ -55,15 +55,15 @@ namespace AplicacionOpenTK.Utiles
 
             List<Punto> puntos = new List<Punto>();
             
-            //HashSet<Punto<float>> textureVertices = new HashSet<Punto<float>>();
-            //HashSet<Punto<float>> normals = new HashSet<Punto<float>>();
+            HashSet<Punto> textureVertices = new HashSet<Punto>();
+            HashSet<Punto> normals = new HashSet<Punto>();
             
 
 
             Dictionary<string, Parte> caras = new Dictionary<string, Parte>();
             
-            //List<uint> textureIndices = new List<uint>();
-            //List<uint> normalIndices = new List<uint>();
+            List<uint> textureIndices = new List<uint>();
+            List<uint> normalIndices = new List<uint>();
             
 
 
@@ -91,16 +91,16 @@ namespace AplicacionOpenTK.Utiles
                             break;
 
                         case "vt":
-                            //textureVertices.Add(new Punto<float>(float.Parse(words[0], CultureInfo.InvariantCulture),
-                                //float.Parse(words[1], CultureInfo.InvariantCulture),
-                                //words.Count < 3 ? 0 : float.Parse(words[2], CultureInfo.InvariantCulture)));
+                            textureVertices.Add(new Punto(float.Parse(words[0], CultureInfo.InvariantCulture),
+                                float.Parse(words[1], CultureInfo.InvariantCulture),
+                                words.Count < 3 ? 0 : float.Parse(words[2], CultureInfo.InvariantCulture)));
                             break;
 
                         case "vn":
-                            //normals.Add(
-                                //new Punto<float>(float.Parse(words[0], CultureInfo.InvariantCulture),
-                                    //float.Parse(words[1], CultureInfo.InvariantCulture),
-                                    //float.Parse(words[2], CultureInfo.InvariantCulture)));
+                            normals.Add(
+                                new Punto(float.Parse(words[0], CultureInfo.InvariantCulture),
+                                    float.Parse(words[1], CultureInfo.InvariantCulture),
+                                    float.Parse(words[2], CultureInfo.InvariantCulture)));
                             break;
 
                         // face
@@ -118,11 +118,11 @@ namespace AplicacionOpenTK.Utiles
                                 int index = int.Parse(comps[0]) - 1;
                                 Vertices.Add(key.ToString(),new Punto(puntos[index].X, puntos[index].Y, puntos[index].Z));
 
-                                //if (comps.Length > 1 && comps[1].Length != 0)
-                                    //textureIndices.Add(uint.Parse(comps[1]) - 1);
+                                if (comps.Length > 1 && comps[1].Length != 0)
+                                    textureIndices.Add(uint.Parse(comps[1]) - 1);
 
-                                //if (comps.Length > 2)
-                                    //normalIndices.Add(uint.Parse(comps[2]) - 1);
+                                if (comps.Length > 2)
+                                    normalIndices.Add(uint.Parse(comps[2]) - 1);
 
                                 key++;
                             }

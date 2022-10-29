@@ -72,6 +72,9 @@
             this.buttonPlay = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.barraTraslacionX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barraTraslacionY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barraTraslacionZ)).BeginInit();
@@ -371,7 +374,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 50;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // menuStrip1
@@ -421,7 +424,6 @@
             this.numero1ToolStripMenuItem.Name = "numero1ToolStripMenuItem";
             this.numero1ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.numero1ToolStripMenuItem.Text = "Numero1";
-            this.numero1ToolStripMenuItem.Click += new System.EventHandler(this.numero1ToolStripMenuItem_Click);
             // 
             // button1
             // 
@@ -480,12 +482,38 @@
             this.comboBox2.Size = new System.Drawing.Size(104, 24);
             this.comboBox2.TabIndex = 46;
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "Archivos JSON (*-json)|*.json";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(203, 214);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Borrar objeto";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(309, 214);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(100, 23);
+            this.button4.TabIndex = 48;
+            this.button4.Text = "Borrar Escenario";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(511, 680);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
@@ -589,5 +617,8 @@
         private System.Windows.Forms.Button buttonPlay;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }

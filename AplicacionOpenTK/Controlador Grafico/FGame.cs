@@ -1,5 +1,6 @@
 ﻿using AplicacionOpenTK.Modelos;
 using AplicacionOpenTK.Utiles;
+using OpenTK;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,10 +48,12 @@ namespace AplicacionOpenTK.Interfaz_Grafica
         public FGame()
         {
             InitializeComponent();
-            //Serializador<Escenario> s = new Serializador<Escenario>();
+
             this.escenarios = new Dictionary<string, Escenario>();
-            //this.escenarios.Add("EscenarioAnima", s.CargarJson("../../../AplicacionOpenTK/Figuras3D/EscenariVir.json"));
+
             contador = 0;
+
+        
         }
 
         private void barraTraslacionX_Scroll(object sender, EventArgs e)
@@ -332,11 +335,6 @@ namespace AplicacionOpenTK.Interfaz_Grafica
             valorPrevioEZ = barraEscalacionZ.Value;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void barPerspectivaX_Scroll(object sender, EventArgs e)
         {
             etiquetaPerspectivaEnX.Text = "En X: " + barPerspectivaX.Value + "º";
@@ -355,50 +353,73 @@ namespace AplicacionOpenTK.Interfaz_Grafica
             game.PerZ = barPerspectivaZ.Value;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-               
-        }
-
         private void animacion()
         {
-
             if (escenarios.Count == 0 || escenarios.First().Key != "EscenarioAnimacion")
             {
-                Serializador<Escenario> s = new Serializador<Escenario>();
+                cargarEscenarioAnimado();
+            }
+            
+            Escenario escenario = game.Escenarios["EscenarioAnimacion"];
+            
+            Objeto Carroceria;
+            escenario.Objetos.TryGetValue("Carroceria", out Carroceria);
 
-                string dir = "../../../../ProgramacionGrafica/AplicacionOpenTK/Figuras3D/EscenarioAnimacion1.json";
+            Objeto Llanta1;
+            escenario.Objetos.TryGetValue("Llanta1", out Llanta1);
 
-                escenarios.Add("EscenarioAnimacion", s.CargarJson(dir));
+            Objeto Llanta2;
+            escenario.Objetos.TryGetValue("Llanta2", out Llanta2);
 
-                game.Escenarios = this.escenarios;
+            Objeto Llanta3;
+            escenario.Objetos.TryGetValue("Llanta3", out Llanta3);
 
-                comboBox1.Items.Clear();
-                foreach (var escenario1 in escenarios)
-                {
-                    comboBox1.Items.Add(escenario1.Key);
-                }
-                comboBox1.Items.Add("");
+            Objeto Llanta4;
+            escenario.Objetos.TryGetValue("Llanta4", out Llanta4);
+            
+            Carroceria.trasladar(0.01f, 0, 0);
+            Llanta1.trasladar(0.01f, 0, 0);
+            Llanta2.trasladar(0.01f, 0, 0);
+            Llanta3.trasladar(0.01f, 0, 0);
+            Llanta4.trasladar(0.01f, 0, 0);
+
+            Carroceria.escalarPar(0.01f + 1, 0.01f + 1, 0.01f + 1);
+            Llanta1.escalarPar(0.01f + 1, 0.01f + 1, 0.01f + 1);
+            Llanta2.escalarPar(0.01f + 1, 0.01f + 1, 0.01f + 1);
+            Llanta3.escalarPar(0.01f + 1, 0.01f + 1, 0.01f + 1);
+            Llanta4.escalarPar(0.01f + 1, 0.01f + 1, 0.01f + 1);
+
+            Llanta1.rotar(0, 0, 20);
+            Llanta2.rotar(0, 0, 20);
+            Llanta3.rotar(0, 0, 20);
+            Llanta4.rotar(0, 0, 20);
+        }
+
+        private void cargarEscenarioAnimado()
+        { 
+            game.Escenarios = this.escenarios;
+
+            barPerspectivaX.Value = 18;
+            barPerspectivaY.Value = 248;
+
+            game.PerX = barPerspectivaX.Value;
+            game.PerY = barPerspectivaY.Value;
+
+            Serializador<Escenario> s = new Serializador<Escenario>();
+
+            escenarios.Clear();
+
+            string dir = "../../../../ProgramacionGrafica/AplicacionOpenTK/Elementos Modelados/EscenarioAnimacion1.json";
+
+            escenarios.Add("EscenarioAnimacion", s.CargarJson(dir));
+
+            comboBox1.Items.Clear();
+            foreach (var escenario1 in escenarios)
+            {
+                comboBox1.Items.Add(escenario1.Key);
             }
 
-            Objeto objeto;
-            Escenario escenario = game.Escenarios.First().Value;
-
-            escenario.Objetos.TryGetValue("Llanta1", out objeto);
-            objeto.rotar(25, 0, 0);
-
-            escenario.Objetos.TryGetValue("Llanta2", out objeto);
-            objeto.rotar(25, 0, 0);
-
-            escenario.Objetos.TryGetValue("Llanta3", out objeto);
-            objeto.rotar(25, 0, 0);
-
-            escenario.Objetos.TryGetValue("Llanta4", out objeto);
-            objeto.rotar(25, 0, 0);
-
-            escenario.trasladar(0, 0, 0.005f);
-
-            escenario.escalar(1.005f, 1.005f, 1.005f);
+            comboBox1.Items.Add("");
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -408,12 +429,23 @@ namespace AplicacionOpenTK.Interfaz_Grafica
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        }
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                Serializador<Escenario> s = new Serializador<Escenario>();
 
-        private void numero1ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
+                Dictionary<String, Objeto> objetos = new Dictionary<string, Objeto>();
+
+                foreach (var escenario in escenarios)
+                {
+                    foreach (var objeto in escenario.Value.Objetos)
+                    {
+                        objetos.Add(objeto.Key, objeto.Value);
+                    }
+                }
+
+                Escenario escenarioS = new Escenario(objetos, new Punto());
+                s.Serializar(saveFileDialog1.FileName, escenarioS);   
+            }
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)
@@ -457,7 +489,7 @@ namespace AplicacionOpenTK.Interfaz_Grafica
         {
             comboBox2.Items.Clear();
 
-            if (comboBox1.Text != "" || comboBox1.Text != null)
+            if (comboBox1.Text != "" && comboBox1.Text != null)
             {
                 foreach (var objeto in escenarios[comboBox1.Text].Objetos)
                 {
@@ -472,7 +504,7 @@ namespace AplicacionOpenTK.Interfaz_Grafica
         {
             Serializador<Escenario> s = new Serializador<Escenario>();
 
-            string dir = "../../../../ ProgramacionGrafica / AplicacionOpenTK / Figuras3D / EscenarioAnimacion1.json";
+            string dir = "../../../../ProgramacionGrafica/AplicacionOpenTK/Elementos Modelados/EscenarioAnimacion1.json";
 
             escenarios.Clear();
             escenarios.Add("EscenarioAnimacion", s.CargarJson(dir));
@@ -500,6 +532,29 @@ namespace AplicacionOpenTK.Interfaz_Grafica
             if (timer1.Interval <= 70)
             {
                 timer1.Interval += 20;
+            }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (comboBox2.Text != "" && comboBox1.Text != "")
+            {
+                Escenario escenario;
+                escenarios.TryGetValue(comboBox1.Text, out escenario);
+                escenario.Objetos.Remove(comboBox2.Text);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.Text != "")
+            {
+                escenarios.Remove(comboBox1.Text);
+                comboBox1.Items.Remove(comboBox1.Text);
+            }else
+            {
+                escenarios.Clear();
+                comboBox1.Items.Clear();
             }
         }
     }

@@ -53,10 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
-    <Compile Include="Interfaz Grafica\FGame.cs">
+    <Compile Include="Controlador Grafico\FGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz Grafica\FGame.Designer.cs">
+    <Compile Include="Controlador Grafico\FGame.Designer.cs">
       <DependentUpon>FGame.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Escenario.cs" />
@@ -71,21 +71,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utiles\Serializador.cs" />
+    <Compile Include="Utilidades\Serializador.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Figuras3D\Auto.obj" />
-    <None Include="Figuras3D\Casa.obj" />
-    <None Include="Figuras3D\Cubo.obj" />
-    <None Include="Figuras3D\Escenario.json" />
-    <None Include="Figuras3D\escenario2.json" />
-    <None Include="Figuras3D\Mesa.obj" />
+    <None Include="Elementos Modelados\Auto.obj" />
+    <None Include="Elementos Modelados\AutoCarroceria.obj" />
+    <None Include="Elementos Modelados\AutoLlanta.obj" />
+    <None Include="Elementos Modelados\Casa.obj" />
+    <None Include="Elementos Modelados\Cubo.obj" />
+    <None Include="Elementos Modelados\Escenario.json" />
+    <None Include="Elementos Modelados\EscenarioAnimacion1.json" />
+    <None Include="Elementos Modelados\EscenarioComplemento.json" />
+    <None Include="Elementos Modelados\Mesa.obj" />
+    <None Include="Elementos Modelados\PAuto.json" />
+    <None Include="Elementos Modelados\Save2.json" />
+    <None Include="Elementos Modelados\Save3.json" />
     <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Interfaz Grafica\FGame.resx">
+    <EmbeddedResource Include="Controlador Grafico\FGame.resx">
       <DependentUpon>FGame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,22 +100,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Recursos\Play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Acelerar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Desacelerar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Pausa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Recursos\Stop.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\play_icon_134504.ico" />
+    <Content Include="Recursos\Acelerar.png" />
+    <Content Include="Recursos\Desacelerar.png" />
+    <Content Include="Recursos\Pausa.png" />
+    <Content Include="Recursos\Play.png" />
+    <Content Include="Recursos\Stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -23,6 +23,6 @@ D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\Aplica
 D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\bin\Debug\OpenTK.pdb
 D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\bin\Debug\OpenTK.xml
 D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csproj.GenerateResource.Cache
-D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csprojResolveAssemblyReference.cache
 D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.Interfaz_Grafica.FGame.resources
 D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.Properties.Resources.resources
+D:\OJHR\Materias FICCT\Programacion grafica\Tarea # 5\ProgramacionGrafica\AplicacionOpenTK\obj\Debug\AplicacionOpenTK.csprojResolveAssemblyReference.cache

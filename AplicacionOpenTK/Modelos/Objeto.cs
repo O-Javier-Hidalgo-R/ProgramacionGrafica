@@ -1,4 +1,5 @@
 ﻿using AplicacionOpenTK.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -88,6 +89,14 @@ namespace AplicacionOpenTK.Modelos
             foreach (var parte in Partes)
             {
                 parte.Value.escalar(enX, enY, enZ);
+            }
+        }
+
+        internal void escalarPar(float enX, float enY, float enZ)
+        {
+            foreach (var parte in Partes)
+            {
+                parte.Value.escalarPar(enX, enY, enZ);
             }
         }
     }
